@@ -49,7 +49,7 @@ get "/" do
   redirect "/lists"
 end
 
-def load_list(index)
+def load_list(id)
   list = session[:lists].find { |list| list[:id] == id }
   return list if list
 
