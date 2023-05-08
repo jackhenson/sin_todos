@@ -107,7 +107,7 @@ end
 
 get '/lists/:id' do
   id = params[:id].to_i
-  @list = load_list(@list_id)
+  @list = load_list(id)
   @list_name = @list[:name]
   @list_id = @list[:id]
   @todos = @list[:todos]
@@ -175,7 +175,7 @@ post '/lists/:list_id/todos' do
 end
 
 # Delete a todo item
-post "/lists/:list_id/todos/:todo_id/destroy" do
+post "/lists/:list_id/todos/:id/destroy" do
   @list_id = params[:list_id].to_i
   @list = load_list(@list_id)
 
